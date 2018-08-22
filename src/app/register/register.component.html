@@ -1,0 +1,26 @@
+<form>
+<div class="form-group">
+<input class="form-control" [(ngModel)]="userdata.name" name="name" type="text" placeholder="name"  #name="ngModel">
+</div>
+<div [hidden]="(name.dirty || name.untouched || name.invalid) " class="alert alert-info">Name is required
+  </div>
+<div class="form-group">
+  <input class="form-control" [(ngModel)]="userdata.email" type="email" #email="ngModel" name="email" placeholder="email">
+  </div>
+  <div [hidden]="email.dirty ||email.untouched" class="alert alert-info">email is required</div>
+  <div class="form-group">
+    <input #mobilenumber="ngModel" name="number"[(ngModel)]="userdata.mobilenumber" class="form-control"  placeholder="mobilenumber" type="text">
+    </div>
+    <div [hidden]="mobilenumber.dirty ||mobilenumber.untouched" class="alert alert-info">mobilenumber is required</div>
+    <div class="form-group">
+      <input class="form-control" #emergency="ngModel" name="emergency" type="text" [(ngModel)]='userdata.emergency' placeholder="emergency">
+      </div>
+      <div [hidden]="emergency.dirty ||emergency.untouched" class="alert alert-info">emergency is required</div>
+      <div class="form-group">
+        <input class="form-control" name="discription" type="discription" #discription="ngModel"[(ngModel)]='userdata.discription' placeholder="discription">
+        </div>
+        <div [hidden]="discription.dirty ||discription.untouched" class="alert alert-info">discription is required</div>
+  <div class="form-group">
+    <input class="btn btn-primary"  type="submit" value="register" role="button" (click)="signUp()">
+    </div>
+  </form>

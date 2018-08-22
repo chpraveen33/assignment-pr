@@ -1,0 +1,6 @@
+<div class="container">
+<input [(ngModel)]="searchInput" placeholder="search" type="text" />
+<div *ngFor="let i of someText | filter:searchInput" style="text-decoration:none;">
+  <a routerLink="/filter">{{i}}</a>
+</div>
+</div>
